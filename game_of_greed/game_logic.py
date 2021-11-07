@@ -16,6 +16,18 @@ class GameLogic:
     def calculate_score(value):
         counter = collections.Counter(value)
         total = 0
+
+        if value == (1, 2, 3, 4, 5, 6):
+            total += 1500
+            return total
+        
+
+        if len(counter) ==3 and counter[1] == counter[2] == counter[3]:
+            total += 1500
+            return total
+
+
+
         for i in counter:
             # print(counter[i])
             if i == 1:
@@ -24,13 +36,40 @@ class GameLogic:
                 if counter[i] == 2:
                     total += 200
                 if counter[i] >= 3:
-                    total = 1000 * (counter[i] - 2)
+                    total += 1000 * (counter[i] - 2)
             if i == 2:
                 if counter[i] >= 3:
-                    total = 200 * (counter[i] - 2)
+                    total += 200 * (counter[i] - 2)
             if i == 3:
                 if counter[i] >= 3:
-                    total = 300 * (counter[i] - 2)
+                    total += 300 * (counter[i] - 2)
+            if i == 4:
+                if counter[i] >= 3:
+                    total += 400 * (counter[i] - 2)
+            if i == 5:
+                if counter[i] == 1:
+                    total += 50
+                if counter[i] == 2:
+                    total += 100
+                if counter[i] >= 3:
+                    total += 500 * (counter[i] - 2)
+            if i == 6:
+                if counter[i] >= 3:
+                    total += 600 * (counter[i] - 2)
+   
+        
+
+        # for 3 pairs 
+        num_of_pairs = 0
+        for i in counter:
+            if len(counter) ==3:
+                if counter[i] == 2:
+                    num_of_pairs += 1
+            
+        if num_of_pairs == 3:
+            return 1500
+        ##########
+
         return total
 
 
