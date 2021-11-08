@@ -80,9 +80,6 @@ class Game:
                     counter1 = collections.Counter(dice_to_keep)
                     # print (counter1)
                     if len(counter1) == 3 and counter1[1] == counter1[2] == counter1[3]:
-
-                        # banker.shelved=banker.shelved+1500
-                        # banker.shelf(score+1500)
                     
                         continue
 
