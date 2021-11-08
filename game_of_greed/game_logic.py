@@ -17,7 +17,8 @@ class GameLogic:
         counter = collections.Counter(value)
         total = 0
 
-        if value == (1, 2, 3, 4, 5, 6):
+
+        if len(counter) ==6 and counter[1] == counter[2] == counter[3] == counter[4] == counter[5] == counter[6]:
             total += 1500
             return total
         
