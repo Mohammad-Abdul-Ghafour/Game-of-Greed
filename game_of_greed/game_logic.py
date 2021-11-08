@@ -1,33 +1,31 @@
 import random
 import collections
 
+
 class GameLogic:
     def __init__(self):
         pass
 
     def roll_dice(value):
         i = 1
-        values=[]
+        values = []
         while i <= value:
-            values.append(random.randint(1,6))
+            values.append(random.randint(1, 6))
             i += 1
         return tuple(values)
 
     def calculate_score(value):
         counter = collections.Counter(value)
         total = 0
-
-
-        if len(counter) ==6 and counter[1] == counter[2] == counter[3] == counter[4] == counter[5] == counter[6]:
-            total += 1500
-            return total
         
-
-        if len(counter) ==3 and counter[1] == counter[2] == counter[3]:
+        if len(counter) == 6 and counter[1] == counter[2] == counter[3] == counter[4] == counter[5] == counter[6]:
             total += 1500
+            
             return total
 
-
+        if len(counter) == 3 and counter[1] == counter[2] == counter[3]:
+            total += 1500
+            return total
 
         for i in counter:
             # print(counter[i])
@@ -57,48 +55,19 @@ class GameLogic:
             if i == 6:
                 if counter[i] >= 3:
                     total += 600 * (counter[i] - 2)
-   
-        
 
-        # for 3 pairs 
+        # for 3 pairs
         num_of_pairs = 0
         for i in counter:
-            if len(counter) ==3:
+            if len(counter) == 3:
                 if counter[i] == 2:
                     num_of_pairs += 1
-            
+
         if num_of_pairs == 3:
             return 1500
         ##########
 
         return total
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # if __name__ == "__main__":
@@ -114,15 +83,14 @@ class GameLogic:
 #                 total += 200
 #             if counter[i] >= 3:
 #                 total += 1000 * (counter[i] - 2)
-            # if counter[i] == 3:
-            #     total += 1000
-            # if counter[i] == 4:
-            #     total += 2000
-            # if counter[i] == 5:
-            #     total += 3000
-            # if counter[i] == 6:
-            #     total += 4000
-        
+        # if counter[i] == 3:
+        #     total += 1000
+        # if counter[i] == 4:
+        #     total += 2000
+        # if counter[i] == 5:
+        #     total += 3000
+        # if counter[i] == 6:
+        #     total += 4000
 
 
 # collections.Counter(value)
