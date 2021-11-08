@@ -9,3 +9,11 @@ def test_one_and_done():
 
 def test_bank_first_for_two_rounds():
     Flo.test('tests/flow/bank_first_for_two_rounds.sim.txt')
+
+
+def test_bank_one_roll_and_quit():
+    Flo.test('tests/flow/bank_one_roll_then_quit.sim.txt')
+
+
+def test_hot_dice():
+    Flo.test('tests/flow/hot_dice.txt')
