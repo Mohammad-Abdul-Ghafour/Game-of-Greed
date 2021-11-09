@@ -9,4 +9,5 @@
    * [pull request trad](https://github.com/Mohammad-Abdul-Ghafour/Game-of-Greed/pull/7)
    * [pull request yousef](https://github.com/Mohammad-Abdul-Ghafour/Game-of-Greed/pull/8)
 
-
+3. DAY(3)
+   *[pull request Jana](https://github.com/Mohammad-Abdul-Ghafour/Game-of-Greed/pull/10)

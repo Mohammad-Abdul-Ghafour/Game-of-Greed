@@ -17,3 +17,9 @@ def test_bank_one_roll_and_quit():
 
 def test_hot_dice():
     Flo.test('tests/flow/hot_dice.txt')
+
+def test_zilch():
+    Flo.test('tests/flow/zilch.sim.txt')
+
+def test_zilch():
+    Flo.test('tests/flow/cheat_and_fix.sim.txt')
