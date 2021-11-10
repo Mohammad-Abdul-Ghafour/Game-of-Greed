@@ -5,7 +5,7 @@ from game_of_greed.banker import Banker
 import collections
 class Game:
     def __init__(self, roller=None):
-        self.roller = roller
+        self.roller = roller or GameLogic.roll_dice
 
 
     def cheater(self, t1, t2, nums):
@@ -41,7 +41,7 @@ class Game:
             dice_left = 6
             cheater = False
 
-            while decision != "q":
+            while decision != "q" and counter <= 10:
 
                 if choice_input != "r" and cheater == False:
                     dice_left = 6
@@ -124,8 +124,9 @@ class Game:
                 print(f"Total score is {banker.balance} points")
 
                 counter += 1
-
+            
             print(f'Thanks for playing. You earned {banker.balance} points')
+            return banker.balance
 
 
 if __name__ == "__main__":
